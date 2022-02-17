@@ -1,0 +1,4 @@
+<div class="container">
+    <app-child *ngFor="let item of doctors" [item]="item"></app-child>
+</div>
+<p *ngIf="doctors.length === 0">No Doctors Found Yet)</p>

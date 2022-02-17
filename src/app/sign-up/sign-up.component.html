@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12  rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0 text-center">Register Form</h3>
+            </div>
+            <div class="card-body">
+                <form class="needs-validation" [formGroup]="signUpForm" (submit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input [(ngModel)]="registerdUserData.name" autocomplete="off" type="text"
+                            class="form-control  {{ name.touched ? (name.invalid ? 'is-invalid' : 'is-valid') : ''}} invalid form-control-warning"
+                            id="name" formControlName="name">
+                        <div *ngIf="name.invalid && name.touched" class="text-danger ">
+                            Name Field is Required & greater than 2.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input [(ngModel)]="registerdUserData.email" autocomplete="off" type="email"
+                            class="form-control {{ email.touched ? (email.invalid ? 'is-invalid' : 'is-valid') : ''}}"
+                            id="email" formControlName="email" aria-describedby="emailHelp">
+                        <div *ngIf="email?.errors?.required && email.touched" class="text-danger ">
+                            Email Field is required
+                        </div>
+                        <div *ngIf="email?.errors?.pattern && email.touched" class="text-danger ">
+                            Please Provide a Valid Email
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input [(ngModel)]="registerdUserData.password" autocomplete="off" type="password"
+                            class="form-control  {{ password.touched ? (password.invalid ? 'is-invalid' : 'is-valid') : ''}} invalid form-control-warning"
+                            id="password" formControlName="password">
+                        <div *ngIf="password.invalid && password.touched" class="text-danger ">
+                            Password Field is Required.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordConfirmation" class="form-label">Password Confirmation</label>
+                        <input autocomplete="off" type="password"
+                            class="form-control  {{ passwordConfirmation.touched ? (passwordConfirmation.invalid ? 'is-invalid' : 'is-valid') : ''}} invalid form-control-warning"
+                            id="passwordConfirmation" formControlName="passwordConfirmation">
+                        <div *ngIf="passwordConfirmation.invalid && passwordConfirmation.touched" class="text-danger ">
+                            Password Confirmation Field is Required .
+                        </div>
+                    </div>
+
+                    <button [disabled]="signUpForm.invalid" type="submit my-2" class="btn btn-primary"
+                        style="width: 100%;font-size: larger;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

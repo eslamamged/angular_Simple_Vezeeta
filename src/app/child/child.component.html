@@ -1,0 +1,53 @@
+<!-- <div class="card my-3">
+    <img class="card-img-top" src="../../assets/images/{{item.image}}" alt="Card image cap">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Doctor name : {{ item.name }} </li>
+        <li class="list-group-item">Doctor department : {{ item.department }}</li>
+        <li class="list-group-item">Doctor email : {{ item.email }}</li>
+        <li class="list-group-item">Doctor phone : {{ item.phone }}</li>
+        <li class="list-group-item">Doctor rate : {{ item.rate}}</li>
+         <li class="list-group-item">Doctor address : [City :{{item?.address?.city}} , Country : {{
+            item?.address?.country}}]
+        </li>
+    </ul>
+    <button type="button" [disabled]="loading" class="btn btn-primary my-3" (click)="lod()">
+        save
+        <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+    </button>
+    <button type="button" class="btn btn-primary mb-3" [routerLink]="'/edit/'+item._id">Edit</button>
+    <button type="button" class="btn btn-primary" (click)="del()">Delete</button>
+</div> -->
+
+<div class="container">
+    <div class=" row">
+        <table class="table table-bordred table-striped">
+            <thead>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Rate</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="../../assets/images/{{item.image}}" alt="Card image"></td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.department }}</td>
+                    <td>{{ item.email }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.rate}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary mb-3"
+                            [routerLink]="'/edit/'+item._id">Edit</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" (click)="del()">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="card my-3" *ngFor="let item of doctors">
+            <ul class="list-group list-group-flush">
+                <img class="card-img-top" src="../../assets/images/{{item.image}}" alt="Card image cap">
+                <li class="list-group-item">Doctor name : {{ item.name }} </li>
+                <li class="list-group-item">Doctor department : {{ item.department }}</li>
+                <li class="list-group-item">Doctor email : {{ item.email }}</li>
+                <li class="list-group-item">Doctor phone : {{ item.phone }}</li>
+                <li class="list-group-item">Doctor rate : {{ item.rate}}</li>
+                <!-- <li class="list-group-item">Doctor address : [City :{{item?.address?.city}} , Country : {{
+                        item?.address?.country}}]
+                    </li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<p *ngIf="doctors.length === 0">No Doctors Found Yet)</p>

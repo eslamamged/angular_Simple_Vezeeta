@@ -1,0 +1,70 @@
+<div class="container  mt-5">
+    <div class="row">
+        <div class="col-md-12  rounded-0">
+            <div class="card-header">
+                <h3 class="mb-0 text-center">Add Doctor Form</h3>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                    <label for="name">Name: </label>
+                    <input type="text" formControlName="name" placeholder="name" class="form-control">
+                    <div *ngIf="name.invalid && name.touched && name.dirty" class="alert alert-danger">please enter the
+                        name
+                    </div>
+                    <label for="department">Department: </label>
+                    <input type="text" formControlName="department" placeholder="department" class="form-control">
+                    <div *ngIf="department.invalid && department.touched  && department.dirty"
+                        class="alert alert-danger">
+                        please
+                        enter the department
+                    </div>
+                    <label for="email">Email: </label>
+                    <input type="email" formControlName="email" placeholder="email" class="form-control">
+                    <div *ngIf="email.invalid && email.touched && email.dirty" class="alert alert-danger">please enter
+                        the
+                        email
+                    </div>
+                    <label for="phone">phone: </label>
+                    <input type="text" formControlName="phone" placeholder="phone" class="form-control">
+                    <div *ngIf="phone.invalid && phone.touched && phone.dirty" class="alert alert-danger">please enter
+                        the
+                        phone
+                    </div>
+                    <label for="image">name of image: </label>
+                    <input type="text" formControlName="image" placeholder="image" class="form-control">
+                    <div *ngIf="image.invalid && image.touched && image.dirty" class="alert alert-danger">please enter
+                        the
+                        image path
+                    </div>
+                    <label for="phone">rate: </label>
+                    <input type="number" formControlName="rate" placeholder="rate" class="form-control"><br>
+                    <div *ngIf="rate.invalid && rate.touched && rate.dirty" class="alert alert-danger">please enter
+                        the
+                        rate
+                    </div>
+                    <!-- <label for="address" style="width: 100%;text-align: center;">Doctor
+                        Address
+                    </label>
+                    <div formGroupName="doctorAddress">
+                        <label for="city"> City: </label><br>
+                        <input type="text" formControlName="city" placeholder="city" class="form-control">
+                        <div *ngIf="doctorAddress.city.invalid && doctorAddress.city.touched"
+                            class="alert alert-danger">
+                            please
+                            enter the city
+                        </div>
+                        <label for="country"> Country: </label><br>
+                        <input type="text" formControlName="country" placeholder="country" class="form-control">
+                        <div *ngIf="doctorAddress.country.invalid && doctorAddress.country.touched"
+                            class="alert alert-danger">
+                            please enter
+                            the country
+                        </div>
+                    </div> -->
+                    <button style="width: 100%;font-size: larger;" [disabled]="myForm.invalid"
+                        class="btn btn-primary my-2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
