@@ -20,6 +20,7 @@ export class AddDoctorComponent implements OnInit {
       phone :['',[Validators.required,Validators.maxLength(11),Validators.minLength(11)]],
       image :['',[Validators.required]],
       rate :['',[Validators.required,Validators.maxLength(5),Validators.minLength(0)]],
+      address :['',[Validators.required]],
     })
   }
   get name() {
@@ -39,6 +40,9 @@ export class AddDoctorComponent implements OnInit {
   }
   get image() {
     return this.myForm.get('image');
+  }
+  get address() {
+    return this.myForm.get('address');
   }
   onSubmit(){
     console.log(this.myForm.value);

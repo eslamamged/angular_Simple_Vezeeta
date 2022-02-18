@@ -41,12 +41,20 @@
                         the
                         image path
                     </div>
-                    <label for="phone">rate: </label>
+                    <label for="rate">rate: </label>
                     <input type="number" [(ngModel)]="doctors.rate" formControlName="rate" placeholder="rate"
                         class="form-control"><br>
                     <div *ngIf="rate.invalid && rate.touched && rate.dirty" class="alert alert-danger">please enter
                         the
                         rate
+                    </div>
+                    <label for="address">Address: </label>
+                    <input type="text" [(ngModel)]="doctors.address" formControlName="address" placeholder="address"
+                        class="form-control"><br>
+                    <div *ngIf="address.invalid && address.touched && address.dirty" class="alert alert-danger">please
+                        enter
+                        the
+                        address
                     </div>
                     <button style="width: 100%;font-size: larger;" [disabled]="myForm.invalid"
                         class="btn btn-primary my-2">Edit</button>
