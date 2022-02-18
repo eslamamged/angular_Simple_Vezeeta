@@ -16,10 +16,6 @@ export class EditDoctorComponent implements OnInit {
   id: any;
   myForm : any;
   ngOnInit(): void {
-    const address = this.fb.group({
-      country : ['',[Validators.required]],
-      city : ['',[Validators.required]],
-    });
     this.myForm = this.fb.group({
       name : ['',[Validators.required, Validators.minLength(4), Validators.maxLength(25)]],
       department : new FormControl('',Validators.required),
@@ -27,7 +23,6 @@ export class EditDoctorComponent implements OnInit {
       phone :['', [ Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"),Validators.minLength(11), Validators.maxLength(11)]],
       image :['',[Validators.required]],
       rate :['',[Validators.required,Validators.pattern("[0-5]")]],
-       doctorAddress :address,
     })
     this.id = this._activedRoute.snapshot.paramMap.get('id');
 
@@ -53,9 +48,6 @@ export class EditDoctorComponent implements OnInit {
   }
   get image() {
     return this.myForm.get('image');
-  }
-  get doctorAddress() {
-    return this.myForm.get('doctorAddress').controls;
   }
 
   onSubmit(){

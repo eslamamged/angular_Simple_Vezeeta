@@ -13,10 +13,6 @@ export class AddDoctorComponent implements OnInit {
   constructor(private fb: FormBuilder,private _doctorService: DoctorService,private _router:Router) { }
   myForm : any;
   ngOnInit(): void {
-    // const address = this.fb.group({
-    //   country : ['',[Validators.required]],
-    //   city : ['',[Validators.required]],
-    // });
     this.myForm = this.fb.group({
       name : ['',[Validators.required, Validators.minLength(5), Validators.maxLength(25)]],
       department : new FormControl('',Validators.required),
@@ -24,7 +20,6 @@ export class AddDoctorComponent implements OnInit {
       phone :['',[Validators.required,Validators.maxLength(11),Validators.minLength(11)]],
       image :['',[Validators.required]],
       rate :['',[Validators.required,Validators.maxLength(5),Validators.minLength(0)]],
-      //  doctorAddress :address,
     })
   }
   get name() {
@@ -45,9 +40,6 @@ export class AddDoctorComponent implements OnInit {
   get image() {
     return this.myForm.get('image');
   }
-  // get doctorAddress() {
-  //   return this.myForm.get('doctorAddress').controls;
-  // }
   onSubmit(){
     console.log(this.myForm.value);
     this._doctorService.Add_Doctor(this.myForm.value).subscribe(

@@ -1,6 +1,6 @@
 <div class="container">
-    <div class="row justify-content-between">
-        <div class="card my-3" *ngFor="let item of doctors">
+    <div class="row align-content-start m-2">
+        <div class="card col-md-4 mb-2" *ngFor="let item of doctors">
             <ul class="list-group list-group-flush">
                 <img class="card-img-top" src="../../assets/images/{{item.image}}" alt="Card image cap">
                 <li class="list-group-item">Name : {{ item.name }} </li>
@@ -12,5 +12,6 @@
         </div>
     </div>
 </div>
+
 
 <p *ngIf="doctors.length === 0">No Doctors Found Yet)</p>
