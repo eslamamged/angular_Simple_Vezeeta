@@ -7,13 +7,13 @@
             <div class="card-body">
                 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
                     <label for="name">Name: </label>
-                    <input type="text" value="{{doctors.name}}" formControlName="name" placeholder="name"
+                    <input type="text" [(ngModel)]="doctors.name" formControlName="name" placeholder="name"
                         class="form-control">
                     <div *ngIf="name.invalid && name.touched && name.dirty" class="alert alert-danger">please enter the
                         name
                     </div>
                     <label for="department">Department: </label>
-                    <input type="text" value="{{doctors.department}}" formControlName="department"
+                    <input type="text" [(ngModel)]="doctors.department" formControlName="department"
                         placeholder="department" class="form-control">
                     <div *ngIf="department.invalid && department.touched  && department.dirty"
                         class="alert alert-danger">
@@ -21,28 +21,28 @@
                         enter the department
                     </div>
                     <label for="email">Email: </label>
-                    <input type="email" value="{{doctors.email}}" formControlName="email" placeholder="email"
+                    <input type="email" [(ngModel)]="doctors.email" formControlName="email" placeholder="email"
                         class="form-control">
                     <div *ngIf="email.invalid && email.touched && email.dirty" class="alert alert-danger">please enter
                         the
                         email
                     </div>
                     <label for="phone">phone: </label>
-                    <input type="text" value="{{doctors.phone}}" formControlName="phone" placeholder="phone"
+                    <input type="text" [(ngModel)]="doctors.phone" formControlName="phone" placeholder="phone"
                         class="form-control">
                     <div *ngIf="phone.invalid && phone.touched && phone.dirty" class="alert alert-danger">please enter
                         the
                         phone
                     </div>
                     <label for="image">name of image: </label>
-                    <input type="text" value="{{doctors.image}}" formControlName="image" placeholder="image"
+                    <input type="text" [(ngModel)]="doctors.image" formControlName="image" placeholder="image"
                         class="form-control">
                     <div *ngIf="image.invalid && image.touched && image.dirty" class="alert alert-danger">please enter
                         the
                         image path
                     </div>
                     <label for="phone">rate: </label>
-                    <input type="number" value="{{doctors.rate}}" formControlName="rate" placeholder="rate"
+                    <input type="number" [(ngModel)]="doctors.rate" formControlName="rate" placeholder="rate"
                         class="form-control"><br>
                     <div *ngIf="rate.invalid && rate.touched && rate.dirty" class="alert alert-danger">please enter
                         the
@@ -53,7 +53,7 @@
                     </label>
                     <div formGroupName="doctorAddress">
                         <label for="city"> City: </label><br>
-                        <input type="text" value="{{doctors.address.city}}" formControlName="city" placeholder="city"
+                        <input type="text" [(ngModel)]="doctors.address.city" formControlName="city" placeholder="city"
                             class="form-control">
                         <div *ngIf="doctorAddress.city.invalid && doctorAddress.city.touched"
                             class="alert alert-danger">
@@ -61,7 +61,7 @@
                             enter the city
                         </div>
                         <label for="country"> Country: </label><br>
-                        <input type="text" value="{{doctors.address.country}}" formControlName="country"
+                        <input type="text" [(ngModel)]="doctors.address.country" formControlName="country"
                             placeholder="country" class="form-control">
                         <div *ngIf="doctorAddress.country.invalid && doctorAddress.country.touched"
                             class="alert alert-danger">

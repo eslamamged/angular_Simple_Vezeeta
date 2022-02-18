@@ -13,7 +13,6 @@ export class EditDoctorComponent implements OnInit {
   constructor(private fb: FormBuilder,private _doctorService: DoctorService,private _activedRoute: ActivatedRoute,private _router:Router) { 
   }
   doctors:any = [];
-
   id: any;
   myForm : any;
   ngOnInit(): void {
@@ -22,12 +21,12 @@ export class EditDoctorComponent implements OnInit {
       city : ['',[Validators.required]],
     });
     this.myForm = this.fb.group({
-      name : ['',[Validators.required, Validators.minLength(5), Validators.maxLength(25)]],
+      name : ['',[Validators.required, Validators.minLength(4), Validators.maxLength(25)]],
       department : new FormControl('',Validators.required),
       email : ['',[Validators.required, Validators.email,Validators.pattern(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)]],
-      phone :['',[Validators.required,Validators.maxLength(11),Validators.minLength(11)]],
+      phone :['', [ Validators.required,Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$"),Validators.minLength(11), Validators.maxLength(11)]],
       image :['',[Validators.required]],
-      rate :['',[Validators.required,Validators.maxLength(5),Validators.minLength(0)]],
+      rate :['',[Validators.required,Validators.pattern("[0-5]")]],
        doctorAddress :address,
     })
     this.id = this._activedRoute.snapshot.paramMap.get('id');
